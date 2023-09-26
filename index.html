@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Civics Questions and Answers for the Naturalization Test</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+    <style>
+        /* Add styles for the slider container */
+        .slider-container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        /* Add styles for the slider content */
+        .slider-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>American Government</h1>
+        <h2>Part A- Principles of American Democracy</h2>
+    </header>
+
+    <main>
+        <!-- Add a slider container -->
+        <div class="slider-container">
+            <!-- Add a slider content container -->
+            <div class="slider-content">
+                <section id="question1">
+                    <h2>Question 1</h2>
+                    <p>What is the supreme law of the land?</p>
+                    <button onclick="toggleAnswer('answer1')">Display Answer</button>
+                    <p id="answer1" style="display: none;">The Constitution</p>
+                    <button onclick="showNextQuestion(1)">Next</button>
+                </section>
+                
+                <section id="question2" style="display: none;">
+                    <h2>Question 2</h2>
+                    <p>What does the Constitution do?</p>
+                    <button onclick="toggleAnswer('answer2')">Display Answer</button>
+                    <ul id="answer2" style="display: none;">
+                        <li>sets up the government</li>
+                        <li>defines the government</li>
+                        <li>protects basic rights of Americans</li>
+                    </ul>
+                    <button onclick="showNextQuestion(2)">Next</button>
+                </section>
+                
+                 <section id="question3" style="display: none;">
+                    <h2>Question 3</h2>
+                    <p>The idea of self-government is in the first three words of the Constitution. What are these words?</p>
+                    <button onclick="toggleAnswer('answer3')">Display Answer</button>
+                    <p id="answer3" style="display: none;">"We the People"</p>
+                    <button onclick="showNextQuestion(3)">Next</button>
+                </section>
+                
+                <section id="question4" style="display: none;">
+                    <h2>Question 4</h2>
+                    <p>What is an amendment?</p>
+                    <button onclick="toggleAnswer('answer4')">Display Answer</button>
+                    <ul id="answer4" style="display: none;">
+                        <li>a change (to the Constitution)</li>
+                        <li>an addition (to the Constitution)</li>
+                    </ul>
+                    <button onclick="showNextQuestion(4)">Next</button>
+                </section>
+                
+                <section id="question5" style="display: none;">
+                    <h2>Question 5</h2>
+                    <p>What do we call the first ten amendments to the Constitution?</p>
+                    <button onclick="toggleAnswer('answer5')">Display Answer</button>
+                    <p id="answer5" style="display: none;">Answer: the Bill of Rights</p>
+                    <button onclick="showNextQuestion(5)">Next</button>
+                </section>
+                
+                <section id="question6" style="display: none;">
+                    <h2>Question 6</h2>
+                    <p>What is one right or freedom from the First Amendment?</p>
+                    <button onclick="toggleAnswer('answer6')">Display Answer</button>
+                    <ul id="answer6" style="display: none;">
+                        <li>speech</li>
+                        <li>religion</li>
+                        <li>assembly</li>
+                        <li>press</li>
+                        <li>petition the government</li>
+                    </ul>
+                    <button onclick="showNextQuestion(6)">Next</button>
+                </section>
+                
+                <section id="question7" style="display: none;">
+                    <h2>Question 7</h2>
+                    <p>How many amendments does the Constitution have?</p>
+                    <button onclick="toggleAnswer('answer7')">Display Answer</button>
+                    <p id="answer7" style="display: none;">Answer: twenty-seven (27)</p>
+                    <button onclick="showNextQuestion(7)">Next</button>
+                </section>
+                <section id="question8" style="display: none;">
+                    <h2>Question 8</h2>
+                    <p>What is the economic system in the United States?</p>
+                    <button onclick="toggleAnswer('answer8')">Display Answer</button>
+                    <p id="answer8" style="display: none;">Capitalist economy</p>
+                    <button onclick="showNextQuestion(8)">Next</button>
+                </section>
+                
+                <section id="question9" style="display: none;">
+                    <h2>Question 9</h2>
+                    <p>What is the "rule of law"?</p>
+                    <button onclick="toggleAnswer('answer9')">Display Answer</button>
+                    <p id="answer9" style="display: none;">Everyone must follow the law; leaders must obey the law.</p>
+                    <button onclick="showNextQuestion(9)">Next</button>
+                </section>
+                
+                
+                <button id="prevBtn" onclick="showPrevQuestion()" style="display: none;">Previous</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        var currentQuestion = 1;
+
+        function showNextQuestion(questionNumber) {
+            document.getElementById("question" + questionNumber).style.display = "none";
+            questionNumber++;
+            if (questionNumber <= 7) {
+                document.getElementById("question" + questionNumber).style.display = "block";
+            }
+            currentQuestion = questionNumber; // Update the current question number
+            // Show the "Previous" button when we're not on the first question
+            if (currentQuestion > 1) {
+                document.getElementById("prevBtn").style.display = "block";
+            }
+        }
+
+        function showPrevQuestion() {
+            document.getElementById("question" + currentQuestion).style.display = "none";
+            currentQuestion--;
+            if (currentQuestion >= 1) {
+                document.getElementById("question" + currentQuestion).style.display = "block";
+            }
+            // Hide the "Previous" button when we're on the first question
+            if (currentQuestion === 1) {
+                document.getElementById("prevBtn").style.display = "none";
+            }
+        }
+
+        function toggleAnswer(answerId) {
+            var answer = document.getElementById(answerId);
+            if (answer.style.display === "none" || answer.style.display === "") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
