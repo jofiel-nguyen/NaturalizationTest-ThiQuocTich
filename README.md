@@ -6,7 +6,8 @@ This repository contains a collection of 100 civics (history and government) que
 
 ## Contents
 
-- [English Questions and Answers](#english-questions-and-answers)
+- [English Questions and Answers](https://www.uscis.gov/sites/default/files/document/questions-and-answers/100q.pdf)
+
 - [Vietnamese Questions and Answers (Câu hỏi và câu trả lời bằng tiếng Việt)](#vietnamese-questions-and-answers-câu-hỏi-và-câu-trả-lời-bằng-tiếng-việt)
 - [How to Use](#how-to-use)
 - [Contributing](#contributing)
